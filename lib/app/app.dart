@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:hrms/src/constant/app_material_color.dart';
 import 'package:hrms/src/router/app_router.dart';
 
 class App extends StatelessWidget {
@@ -7,12 +7,15 @@ class App extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GetMaterialApp.router(
+    return MaterialApp.router(
       title: 'HRMS',
       debugShowCheckedModeBanner: false,
-      routeInformationProvider: AppRouter.instance.routeInformationProvider,
-      routeInformationParser: AppRouter.instance.routeInformationParser,
-      routerDelegate: AppRouter.instance.routerDelegate,
+      routerConfig: AppRouter.instance,
+      theme: ThemeData(
+        useMaterial3: false,
+        primarySwatch: AppMaterialColor.materialColor,
+        brightness: Brightness.light,
+      ),
     );
   }
 }
