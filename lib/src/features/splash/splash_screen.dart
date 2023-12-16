@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:hrms/src/constant/app_image.dart';
+import 'package:hrms/src/router/app_routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -21,6 +23,7 @@ class _SplashScreenState extends State<SplashScreen>
     );
     animation = Tween(begin: 0.0, end: 250.0).animate(animationController);
     animationController.forward();
+    goToNext();
     super.initState();
   }
 
@@ -39,5 +42,11 @@ class _SplashScreenState extends State<SplashScreen>
         ),
       ),
     );
+  }
+
+  void goToNext() {
+    Future.delayed(const Duration(seconds: 2), () {
+      context.goNamed(AppRoutes.choice.name);
+    });
   }
 }

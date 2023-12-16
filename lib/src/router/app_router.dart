@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
+import 'package:hrms/src/features/choice/choice_screen.dart';
 import 'package:hrms/src/features/home/home_screen.dart';
 import 'package:hrms/src/features/login/login_screen.dart';
 import 'package:hrms/src/features/splash/splash_screen.dart';
@@ -19,6 +20,15 @@ class AppRouter {
         pageBuilder: (context, state) {
           return const MaterialPage(
             child: SplashScreen(),
+          );
+        },
+      ),
+      GoRoute(
+        path: AppRoutes.choice.path,
+        name: AppRoutes.choice.name,
+        pageBuilder: (context, state) {
+          return const MaterialPage(
+            child: ChoiceScreen(),
           );
         },
       ),

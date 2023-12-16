@@ -1,5 +1,6 @@
 enum AppRoutes {
   splash('splash', '/splash'),
+  choice('choice', '/choice'),
   login('login', '/login'),
   home('home', '/home');
 

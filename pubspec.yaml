@@ -29,6 +29,12 @@ flutter_native_splash:
   image: "assets/images/logo_splash.png"
   color_dark: "#ffffff"
 
+  android_12:
+    image: assets/images/logo_splash.png
+    icon_background_color: "#ffffff"
+    image_dark: assets/images/logo_splash.png
+    icon_background_color_dark: "#ffffff"
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
