@@ -1,7 +1,7 @@
 enum AppRoutes {
   splash('splash', '/splash'),
   choice('choice', '/choice'),
-  login('login', '/login'),
+  signIn('sign-in', '/sign-in'),
   home('home', '/home');
 
   final String name;

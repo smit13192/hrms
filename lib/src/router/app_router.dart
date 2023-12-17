@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:hrms/src/features/choice/choice_screen.dart';
 import 'package:hrms/src/features/home/home_screen.dart';
-import 'package:hrms/src/features/login/login_screen.dart';
+import 'package:hrms/src/features/sign_in/sign_in_screen.dart';
 import 'package:hrms/src/features/splash/splash_screen.dart';
 import 'package:hrms/src/router/app_routes.dart';
 
@@ -33,11 +33,11 @@ class AppRouter {
         },
       ),
       GoRoute(
-        path: AppRoutes.login.path,
-        name: AppRoutes.login.name,
+        path: AppRoutes.signIn.path,
+        name: AppRoutes.signIn.name,
         pageBuilder: (context, state) {
           return const MaterialPage(
-            child: LoginScreen(),
+            child: SignInScreen(),
           );
         },
       ),
