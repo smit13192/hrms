@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:go_router/go_router.dart';
+import 'package:get/get.dart';
 import 'package:hrms/src/constant/app_image.dart';
-import 'package:hrms/src/router/app_routes.dart';
+import 'package:hrms/src/router/routes.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -46,7 +46,7 @@ class _SplashScreenState extends State<SplashScreen>
 
   void goToNext() {
     Future.delayed(const Duration(seconds: 2), () {
-      context.goNamed(AppRoutes.choice.name);
+      Get.offAllNamed(Routes.choice);
     });
   }
 }

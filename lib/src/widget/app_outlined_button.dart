@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hrms/src/constant/app_color.dart';
+import 'package:sizer/sizer.dart';
 
 class AppOutlinedButton extends StatelessWidget {
   final String text;
@@ -43,7 +44,7 @@ class AppOutlinedButton extends StatelessWidget {
               text,
               style: style ??
                   TextStyle(
-                    fontSize: 17,
+                    fontSize: 13.sp,
                     color: buttonColor,
                     fontWeight: FontWeight.w500,
                   ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:hrms/app/app.dart';
+import 'package:hrms/src/utils/app_loading.dart';
 
 void main(List<String> args) async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -9,5 +10,6 @@ void main(List<String> args) async {
     DeviceOrientation.portraitUp,
   ]);
   await GetStorage.init();
+  AppLoading.setUpLoading();
   runApp(const App());
 }

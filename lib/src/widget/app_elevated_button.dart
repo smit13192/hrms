@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hrms/src/constant/app_color.dart';
+import 'package:sizer/sizer.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final String text;
@@ -38,10 +39,10 @@ class AppElevatedButton extends StatelessWidget {
           child: Text(
             text,
             style: textStyle ??
-                const TextStyle(
+                TextStyle(
                   color: AppColor.white,
                   fontWeight: FontWeight.w500,
-                  fontSize: 17,
+                  fontSize: 13.sp,
                   letterSpacing: 1,
                 ),
           ),
