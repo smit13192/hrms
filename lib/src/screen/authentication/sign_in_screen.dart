@@ -1,12 +1,9 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/app_color.dart';
-import 'package:hrms/src/constant/app_image.dart';
-import 'package:hrms/src/controller/auth_controller.dart';
-import 'package:hrms/src/widget/app_elevated_button.dart';
-import 'package:hrms/src/widget/app_text_formfield.dart';
-import 'package:hrms/src/widget/gap.dart';
+import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/controller/authentication_service.dart';
+import 'package:hrms/src/widget/widget.dart';
 import 'package:sizer/sizer.dart';
 
 class SignInScreen extends StatelessWidget {
@@ -39,29 +36,13 @@ class _SignInViewState extends State<SignInView> {
     super.dispose();
   }
 
-  AuthController authController = Get.find<AuthController>();
+  AuthenticationService authController = Get.find<AuthenticationService>();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       backgroundColor: AppColor.scaffoldBackgroundColor,
-      appBar: AppBar(
-        leading: Padding(
-          padding: EdgeInsets.only(left: 1.w),
-          child: GestureDetector(
-            onTap: () {
-              Get.back();
-            },
-            child: const Icon(
-              Icons.arrow_back_ios,
-              color: AppColor.primaryColor,
-            ),
-          ),
-        ),
-        backgroundColor: AppColor.transparent,
-        elevation: 0,
-      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).unfocus(),
@@ -73,6 +54,7 @@ class _SignInViewState extends State<SignInView> {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                    GapH(5.h),
                     Image.asset(
                       AppImage.logo,
                       height: 20.h,

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/app_image.dart';
-import 'package:hrms/src/router/routes.dart';
+import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/router/router.dart';
+import 'package:hrms/src/storage/app_storage.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -46,7 +47,15 @@ class _SplashScreenState extends State<SplashScreen>
 
   void goToNext() {
     Future.delayed(const Duration(seconds: 2), () {
-      Get.offAllNamed(Routes.choice);
+      if (!AppStorage.getIsOnBoardingComplete) {
+        Get.offAllNamed(Routes.onBoarding);
+        return;
+      }
+      if (AppStorage.getToken == null) {
+        Get.offAllNamed(Routes.signIn);
+        return;
+      }
+      Get.offAllNamed(Routes.home);
     });
   }
 }

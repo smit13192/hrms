@@ -24,8 +24,7 @@ dependencies:
   email_validator: ^2.1.17
   flutter_easyloading: ^3.0.5
   sizer: ^2.0.15
-  fpdart: ^1.1.0
-  dartz: ^0.10.1
+  connectivity_plus: ^5.0.2
 
 flutter_native_splash:
   android: true
@@ -56,6 +55,7 @@ flutter:
     - assets/
     - assets/fonts/
     - assets/images/
+    - assets/images/onboarding/
 
   fonts:
     - family: Roboto

@@ -1,6 +1,3 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'dart:convert';
-
 class LoginDataModel {
   int statusCode;
   bool success;
@@ -31,11 +28,6 @@ class LoginDataModel {
       token: map['token'] != null ? map['token'] as String : null,
     );
   }
-
-  String toJson() => json.encode(toMap());
-
-  factory LoginDataModel.fromJson(String source) =>
-      LoginDataModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   LoginDataModel copyWith({
     int? statusCode,

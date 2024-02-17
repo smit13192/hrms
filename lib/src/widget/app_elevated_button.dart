@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/src/constant/app_color.dart';
+import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/utils/utils.dart';
 import 'package:sizer/sizer.dart';
 
 class AppElevatedButton extends StatelessWidget {
   final String text;
-  final void Function() onPressed;
+  final OnSubmit onPressed;
   final Color buttonColor;
   final double height;
   final double elevation;
   final BorderRadius? borderRadius;
+  final EdgeInsets? padding;
   final TextStyle? textStyle;
 
   const AppElevatedButton({
@@ -20,6 +22,7 @@ class AppElevatedButton extends StatelessWidget {
     this.elevation = 3,
     this.borderRadius,
     this.textStyle,
+    this.padding,
   }) : super(key: key);
 
   @override
@@ -33,7 +36,9 @@ class AppElevatedButton extends StatelessWidget {
         splashColor: AppColor.buttonSplashColor,
         onTap: onPressed,
         borderRadius: borderRadius ?? BorderRadius.circular(8),
-        child: Container(
+        child: AnimatedContainer(
+          duration: const Duration(milliseconds: 200),
+          padding: padding,
           height: height,
           alignment: Alignment.center,
           child: Text(

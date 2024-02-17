@@ -1,9 +1,9 @@
 import 'package:get/get.dart';
-import 'package:hrms/src/screen/auth/sign_in_screen.dart';
-import 'package:hrms/src/screen/choice_screen.dart';
+import 'package:hrms/src/router/router.dart';
+import 'package:hrms/src/screen/authentication/sign_in_screen.dart';
 import 'package:hrms/src/screen/home/home_screen.dart';
+import 'package:hrms/src/screen/on_boarding_screen.dart';
 import 'package:hrms/src/screen/splash_screen.dart';
-import 'package:hrms/src/router/routes.dart';
 
 final List<GetPage> pages = [
   GetPage(
@@ -14,10 +14,10 @@ final List<GetPage> pages = [
     },
   ),
   GetPage(
-    name: Routes.choice,
+    name: Routes.onBoarding,
     transition: Transition.cupertino,
     page: () {
-      return const ChoiceScreen();
+      return OnBoardingScreen();
     },
   ),
   GetPage(

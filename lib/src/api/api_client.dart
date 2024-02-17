@@ -1,14 +1,12 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:hrms/src/api/api_endpoints.dart';
-import 'package:hrms/src/api/api_excetion.dart';
-import 'package:hrms/src/api/api_interceptors.dart';
-import 'package:hrms/src/utils/app_loading.dart';
+import 'package:hrms/src/api/api.dart';
+import 'package:hrms/src/utils/utils.dart';
 
 class ApiClient {
-  final Dio dio = Dio();
-  final ApiInterceptors apiInterceptors = ApiInterceptors();
+  final Dio _dio = Dio();
+  final ApiInterceptors _apiInterceptors = ApiInterceptors();
 
   ApiClient._() {
     init();
@@ -21,12 +19,12 @@ class ApiClient {
   }
 
   void init() {
-    dio.options = BaseOptions(
+    _dio.options = BaseOptions(
       baseUrl: ApiEndpoints.baseUrl,
       headers: {'Content-Type': 'application/json'},
     );
-    dio.interceptors.add(apiInterceptors.interceptorsWrapper());
-    dio.interceptors.add(apiInterceptors.prettyDioLogger());
+    _dio.interceptors.add(_apiInterceptors.interceptorsWrapper);
+    _dio.interceptors.add(_apiInterceptors.prettyDioLogger);
   }
 
   Future<dynamic> get(
@@ -43,7 +41,7 @@ class ApiClient {
       if (isLoading) {
         AppLoading.showLoading();
       }
-      response = await dio.get(
+      response = await _dio.get(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -78,7 +76,7 @@ class ApiClient {
       if (isLoading) {
         AppLoading.showLoading();
       }
-      response = await dio.post(
+      response = await _dio.post(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -114,7 +112,7 @@ class ApiClient {
       if (isLoading) {
         AppLoading.showLoading();
       }
-      response = await dio.put(
+      response = await _dio.put(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -150,7 +148,7 @@ class ApiClient {
       if (isLoading) {
         AppLoading.showLoading();
       }
-      response = await dio.patch(
+      response = await _dio.patch(
         path,
         data: data,
         queryParameters: queryParameters,
@@ -184,7 +182,7 @@ class ApiClient {
       if (isLoading) {
         AppLoading.showLoading();
       }
-      response = await dio.delete(
+      response = await _dio.delete(
         path,
         data: data,
         queryParameters: queryParameters,

@@ -1,12 +1,12 @@
 import 'package:get/get.dart';
 import 'package:hrms/src/model/login_data_model.dart';
-import 'package:hrms/src/repository/auth_repository.dart';
-import 'package:hrms/src/router/routes.dart';
+import 'package:hrms/src/repository/authentication_repository.dart';
+import 'package:hrms/src/router/router.dart';
 import 'package:hrms/src/storage/app_storage.dart';
 import 'package:hrms/src/utils/app_snackbar.dart';
 
-class AuthController extends GetxController {
-  AuthRepository authRepository = AuthRepository();
+class AuthenticationService extends GetxService {
+  AuthenticationRepository authRepository = AuthenticationRepository();
 
   void signIn({
     required String email,

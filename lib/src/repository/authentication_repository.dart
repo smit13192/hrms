@@ -1,8 +1,7 @@
-import 'package:hrms/src/api/api_client.dart';
-import 'package:hrms/src/api/api_endpoints.dart';
+import 'package:hrms/src/api/api.dart';
 import 'package:hrms/src/model/login_data_model.dart';
 
-class AuthRepository {
+class AuthenticationRepository {
   ApiClient apiClient = ApiClient();
 
   Future<LoginDataModel> signIn(

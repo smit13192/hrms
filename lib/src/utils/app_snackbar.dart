@@ -14,7 +14,7 @@ class AppSnackbar {
         title: title ?? 'Error',
         message: message,
         duration: const Duration(seconds: 2),
-        borderRadius: 20,
+        borderRadius: 10,
       ),
     );
   }
@@ -31,7 +31,7 @@ class AppSnackbar {
         title: title ?? 'Success',
         message: message,
         duration: const Duration(seconds: 2),
-        borderRadius: 20,
+        borderRadius: 10,
       ),
     );
   }
@@ -48,7 +48,7 @@ class AppSnackbar {
         title: title ?? 'Info',
         message: message,
         duration: const Duration(seconds: 2),
-        borderRadius: 20,
+        borderRadius: 10,
       ),
     );
   }

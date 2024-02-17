@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/app_material_color.dart';
-import 'package:hrms/src/constant/app_string.dart';
-import 'package:hrms/src/bindings/auth_binding.dart';
-import 'package:hrms/src/router/pages.dart';
-import 'package:hrms/src/router/routes.dart';
+import 'package:hrms/src/bindings/initial_binding.dart';
+import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/router/router.dart';
 import 'package:sizer/sizer.dart';
 
 class App extends StatelessWidget {
@@ -19,7 +17,7 @@ class App extends StatelessWidget {
           title: 'HRMS',
           debugShowCheckedModeBanner: false,
           getPages: pages,
-          initialBinding: AuthBinding(),
+          initialBinding: InitialBinding(),
           initialRoute: Routes.splash,
           builder: EasyLoading.init(),
           theme: ThemeData(

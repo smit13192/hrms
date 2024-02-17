@@ -1,9 +1,9 @@
-import 'package:hrms/src/utils/app_snackbar.dart';
+import 'package:hrms/src/utils/utils.dart';
 
 class ApiException implements Exception {
   String message;
   ApiException(this.message) {
-    AppSnackbar.showSuccessSnackbar(title: 'Error', message: message);
+    AppSnackbar.showErrorSnackbar(title: 'Error', message: message);
   }
 }
 
