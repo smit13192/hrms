@@ -20,7 +20,7 @@ class NetworkService extends GetxService {
         log('Internet connection available 😁');
       } else {
         isNetworkAvailable.value = false;
-        log('Internet connection not available😒');
+        log('Internet connection not available 😒');
       }
     });
   }

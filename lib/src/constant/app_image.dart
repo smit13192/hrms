@@ -11,4 +11,6 @@ abstract class AppImage {
       '$baseOnBoardingImagePath/onboarding_image_2.png';
   static const String onBoardingImage3 =
       '$baseOnBoardingImagePath/onboarding_image_3.png';
+
+  static const String noInternet = '$baseImagePath/no_internet.png';
 }

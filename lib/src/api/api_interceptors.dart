@@ -10,15 +10,9 @@ class ApiInterceptors {
       onRequest: (RequestOptions options, RequestInterceptorHandler handler) {
         options.headers['Authorization'] =
             'Bearer ${AppStorage.getToken ?? ''}';
-        log('BASE URL:- ${options.baseUrl}');
-        log('API:- ${options.baseUrl}${options.path}');
-        log('REQUEST DATA:- ${options.data}');
-        log('REQUEST HEADER:- ${options.headers}');
         return handler.next(options);
       },
       onResponse: (Response response, ResponseInterceptorHandler handler) {
-        log('RESPONSE STATUS CODE:- ${response.statusCode}');
-        log('RESPONSE DATA:- ${response.data}');
         return handler.next(response);
       },
       onError: (DioException e, ErrorInterceptorHandler handler) {
