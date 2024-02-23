@@ -138,3 +138,7 @@ app.*.symbols
 !.vscode/settings.json
 
 build
+
+.fvm/
+
+.vscode
