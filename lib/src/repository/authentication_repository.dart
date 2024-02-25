@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:hrms/src/api/api.dart';
 import 'package:hrms/src/model/login_data_model.dart';
 import 'package:hrms/src/model/profile_model.dart';
@@ -21,5 +22,16 @@ class AuthenticationRepository {
       ApiEndpoints.profile,
     );
     return ProfileModel.fromMap(data);
+  }
+
+  Future<ProfileModel> profilePicUpdate({required String profilePic}) async {
+    final data = FormData.fromMap({
+      'profilePic': await MultipartFile.fromFile(profilePic),
+    });
+    dynamic result = await apiClient.put(
+      ApiEndpoints.editProfile,
+      data: data,
+    );
+    return ProfileModel.fromMap(result);
   }
 }

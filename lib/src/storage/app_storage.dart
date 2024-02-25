@@ -40,4 +40,9 @@ class AppStorage {
   static bool get getIsOnBoardingComplete {
     return storage.read<bool>(AppStorageString.isOnBoardingComplete) ?? false;
   }
+
+  static Future<void> clearStorage() async {
+    await storage.remove(AppStorageString.token);
+    await storage.remove(AppStorageString.isLogin);
+  }
 }

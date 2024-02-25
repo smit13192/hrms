@@ -14,7 +14,7 @@ class App extends StatelessWidget {
     return Sizer(
       builder: (context, orientation, deviceType) {
         return GetMaterialApp(
-          title: 'HRMS',
+          title: 'Staff Track',
           debugShowCheckedModeBanner: false,
           getPages: pages,
           initialBinding: InitialBinding(),

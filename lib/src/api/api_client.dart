@@ -22,6 +22,12 @@ class ApiClient {
     _dio.options = BaseOptions(
       baseUrl: ApiEndpoints.baseUrl,
       headers: {'Content-Type': 'application/json'},
+      validateStatus: (status) {
+        if (status == null) return false;
+        if (status >= 200 && status < 300) return true;
+        if (status == 400 || status == 401 || status == 403) return true;
+        return false;
+      },
     );
     _dio.interceptors.add(_apiInterceptors.interceptorsWrapper);
     _dio.interceptors.add(_apiInterceptors.prettyDioLogger);
