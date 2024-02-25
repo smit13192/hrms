@@ -8,7 +8,7 @@ class NetworkService extends GetxService {
   final connectivity = Connectivity();
   late final StreamSubscription<ConnectivityResult> subscription;
 
-  Rx<bool> isNetworkAvailable = true.obs;
+  Rx<bool> isNetworkAvailable = false.obs;
 
   @override
   void onInit() {
