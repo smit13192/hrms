@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hrms/src/model/common_response_model.dart';
 import 'package:hrms/src/model/login_data_model.dart';
 import 'package:hrms/src/model/profile_model.dart';
 import 'package:hrms/src/model/user_model.dart';
@@ -35,6 +36,31 @@ class AuthenticationService extends GetxService {
     }
   }
 
+  Future<void> editProfile({
+    required String address,
+    required String city,
+    required String state,
+    required String country,
+    required String pincode,
+    required String bankName,
+    required String acNumber,
+  }) async {
+    final ProfileModel result = await authRepository.editProfile({
+      'address': address,
+      'city': city,
+      'state': state,
+      'country': country,
+      'pincode': pincode,
+      'bankName': bankName,
+      'acNumber': acNumber,
+    });
+    if (result.success) {
+      user.value = result.data!;
+      Get.back();
+      AppSnackbar.showSuccessSnackbar(message: result.message);
+    }
+  }
+
   Future<void> profilePicUpdate({required String profilePic}) async {
     final ProfileModel result =
         await authRepository.profilePicUpdate(profilePic: profilePic);
@@ -49,8 +75,25 @@ class AuthenticationService extends GetxService {
     profilePicUpdate(profilePic: path);
   }
 
+  Future<void> changePassword({
+    required String password,
+    required String newPassword,
+  }) async {
+    CommonResponseModel result = await authRepository.changePassword(
+      password: password,
+      newPassword: newPassword,
+    );
+    if (result.success == true) {
+      Get.back();
+      AppSnackbar.showSuccessSnackbar(message: result.message);
+    } else {
+      AppSnackbar.showErrorSnackbar(message: result.message);
+    }
+  }
+
   Future<void> logOut() async {
     await AppStorage.clearStorage();
+    user.value = User();
     Get.offAllNamed(Routes.signIn);
   }
 }

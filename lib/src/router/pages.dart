@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:hrms/src/bindings/features/reporting_binding.dart';
 import 'package:hrms/src/bindings/home_binding.dart';
 import 'package:hrms/src/router/router.dart';
+import 'package:hrms/src/screen/authentication/edit_profile_screen.dart';
+import 'package:hrms/src/screen/authentication/reset_password_screen.dart';
 import 'package:hrms/src/screen/authentication/sign_in_screen.dart';
 import 'package:hrms/src/screen/features/holiday_screen.dart';
 import 'package:hrms/src/screen/features/leaves_screen.dart';
@@ -14,6 +16,7 @@ import 'package:hrms/src/screen/features/team_screen.dart';
 import 'package:hrms/src/screen/home/home_screen.dart';
 import 'package:hrms/src/screen/on_boarding_screen.dart';
 import 'package:hrms/src/screen/splash_screen.dart';
+import 'package:hrms/src/screen/user_information_screen.dart';
 
 final List<GetPage> pages = [
   GetPage(
@@ -88,6 +91,24 @@ final List<GetPage> pages = [
     name: Routes.notice,
     page: () {
       return const NoticeScreen();
+    },
+  ),
+  GetPage(
+    name: Routes.userInformation,
+    page: () {
+      return const UserInformationScreen();
+    },
+  ),
+  GetPage(
+    name: Routes.resetPasswordScreen,
+    page: () {
+      return const ResetPasswordScreen();
+    },
+  ),
+  GetPage(
+    name: Routes.editProfileScreen,
+    page: () {
+      return const EditProfileScreen();
     },
   ),
 ];

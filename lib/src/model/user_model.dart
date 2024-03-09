@@ -1,9 +1,10 @@
+import 'package:hrms/src/model/company_model.dart';
 import 'package:hrms/src/model/department_model.dart';
 import 'package:hrms/src/model/designation_model.dart';
 
 class User {
   String? sId;
-  String? company;
+  CompanyModel? company;
   String? firstName;
   String? middleName;
   String? lastName;
@@ -74,7 +75,8 @@ class User {
 
   User.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
-    company = json['company'];
+    company =
+        json['company'] != null ? CompanyModel.fromJson(json['company']) : null;
     firstName = json['firstName'];
     middleName = json['middleName'];
     lastName = json['lastName'];
@@ -115,7 +117,9 @@ class User {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['_id'] = sId;
-    data['company'] = company;
+    if (company != null) {
+      data['company'] = company!.toJson();
+    }
     data['firstName'] = firstName;
     data['middleName'] = middleName;
     data['lastName'] = lastName;

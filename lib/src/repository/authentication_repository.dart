@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:hrms/src/api/api.dart';
+import 'package:hrms/src/model/common_response_model.dart';
 import 'package:hrms/src/model/login_data_model.dart';
 import 'package:hrms/src/model/profile_model.dart';
 
@@ -33,5 +34,27 @@ class AuthenticationRepository {
       data: data,
     );
     return ProfileModel.fromMap(result);
+  }
+  
+  Future<ProfileModel> editProfile(dynamic data) async {
+    dynamic result = await apiClient.put(
+      ApiEndpoints.editProfile,
+      data: data,
+    );
+    return ProfileModel.fromMap(result);
+  }
+
+  Future<CommonResponseModel> changePassword({
+    required String password,
+    required String newPassword,
+  }) async {
+    dynamic result = await apiClient.post(
+      ApiEndpoints.changePassword,
+      data: {
+        'password': password,
+        'newPassword': newPassword,
+      },
+    );
+    return CommonResponseModel.fromMap(result);
   }
 }

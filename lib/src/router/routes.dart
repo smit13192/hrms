@@ -11,4 +11,7 @@ abstract class Routes {
   static const String salary = '/salary_screen';
   static const String holiday = '/holiday_screen';
   static const String notice = '/notice_screen';
+  static const String userInformation = '/user_information_screen';
+  static const String resetPasswordScreen = '/reset_password_screen';
+  static const String editProfileScreen = '/edit_profile_screen';
 }

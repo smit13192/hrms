@@ -10,4 +10,5 @@ abstract class AppColor {
   static const Color scaffoldBackgroundColor = Color(0xFFF4F4F4);
   static const Color textFieldFontColor = Colors.grey;
   static const Color buttonSplashColor = Colors.white10;
+  static const Color lightTextColor = Color(0XFF7B7EA8);
 }

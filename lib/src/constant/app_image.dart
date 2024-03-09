@@ -23,4 +23,18 @@ abstract class AppImage {
   static const String profile = '$baseImagePath/profile.png';
   static const String holiday = '$baseImagePath/holiday.png';
   static const String salary = '$baseImagePath/salary.png';
+
+  // profile screen image
+  static const String logOut = '$baseImagePath/log-out.png';
+  static const String resetPassword = '$baseImagePath/reset-password.png';
+  static const String editProfile = '$baseImagePath/edit-profile.png';
+  static const String newPassword = '$baseImagePath/new-password.png';
+
+  // edit profile screen image
+  static const String address = '$baseImagePath/address.png';
+  static const String city = '$baseImagePath/city.png';
+  static const String country = '$baseImagePath/country.png';
+  static const String pincode = '$baseImagePath/pincode.png';
+  static const String bankName = '$baseImagePath/bankname.png';
+  static const String accountNumber = '$baseImagePath/account_number.png';
 }

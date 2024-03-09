@@ -157,15 +157,6 @@ class _HomeDrawerState extends State<HomeDrawer> {
                   ),
                 ),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 3.w, vertical: 2.h),
-                child: AppElevatedButton(
-                  text: 'Logout',
-                  onPressed: () {
-                    authenticationService.logOut();
-                  },
-                ),
-              ),
             ],
           ),
         ),
