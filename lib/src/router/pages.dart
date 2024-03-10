@@ -1,8 +1,10 @@
 import 'package:get/get.dart';
 import 'package:hrms/src/bindings/features/leave_binding.dart';
+import 'package:hrms/src/bindings/features/notice_binding.dart';
 import 'package:hrms/src/bindings/features/reporting_binding.dart';
 import 'package:hrms/src/bindings/home_binding.dart';
 import 'package:hrms/src/router/router.dart';
+import 'package:hrms/src/screen/add_leave_screen.dart';
 import 'package:hrms/src/screen/authentication/edit_profile_screen.dart';
 import 'package:hrms/src/screen/authentication/reset_password_screen.dart';
 import 'package:hrms/src/screen/authentication/sign_in_screen.dart';
@@ -94,6 +96,7 @@ final List<GetPage> pages = [
     page: () {
       return const NoticeScreen();
     },
+    binding: NoticeBinding(),
   ),
   GetPage(
     name: Routes.userInformation,
@@ -102,15 +105,21 @@ final List<GetPage> pages = [
     },
   ),
   GetPage(
-    name: Routes.resetPasswordScreen,
+    name: Routes.resetPassword,
     page: () {
       return const ResetPasswordScreen();
     },
   ),
   GetPage(
-    name: Routes.editProfileScreen,
+    name: Routes.editProfile,
     page: () {
       return const EditProfileScreen();
+    },
+  ),
+  GetPage(
+    name: Routes.addLeave,
+    page: () {
+      return const AddLeaveScreen();
     },
   ),
 ];

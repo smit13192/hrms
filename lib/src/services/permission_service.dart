@@ -25,10 +25,12 @@ class PermissionService {
           'Permission to access photos?',
           textAlign: TextAlign.left,
           fontWeight: FontWeight.w500,
+          color: AppColor.primaryColor,
         ),
         content: AppText(
           'Grant permission to access your photos in order to personalize your profile picture.',
           textAlign: TextAlign.left,
+          color: AppColor.primaryColor,
           fontSize: 13.sp,
         ),
         actions: [
@@ -41,6 +43,7 @@ class PermissionService {
               'Yes',
               color: AppColor.primaryColor,
               fontSize: 12.sp,
+              fontWeight: FontWeight.w500,
             ),
           ),
           TextButton(
@@ -50,6 +53,7 @@ class PermissionService {
             child: AppText(
               'No',
               color: AppColor.primaryColor,
+              fontWeight: FontWeight.w500,
               fontSize: 12.sp,
             ),
           ),

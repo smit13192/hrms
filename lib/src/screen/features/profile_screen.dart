@@ -171,7 +171,7 @@ class _ProfileViewState extends State<ProfileView> {
                 highlightColor: AppColor.transparent,
                 borderRadius: BorderRadius.circular(10),
                 onTap: () {
-                  Get.toNamed(Routes.editProfileScreen);
+                  Get.toNamed(Routes.editProfile);
                 },
                 child: SizedBox(
                   height: 6.h,
@@ -219,7 +219,7 @@ class _ProfileViewState extends State<ProfileView> {
                 highlightColor: AppColor.transparent,
                 borderRadius: BorderRadius.circular(10),
                 onTap: () {
-                  Get.toNamed(Routes.resetPasswordScreen);
+                  Get.toNamed(Routes.resetPassword);
                 },
                 child: SizedBox(
                   height: 6.h,

@@ -48,6 +48,18 @@ class _EditProfileViewState extends State<EditProfileView> {
   }
 
   @override
+  void dispose() {
+    addressController.dispose();
+    cityController.dispose();
+    stateController.dispose();
+    countryController.dispose();
+    pincodeController.dispose();
+    bankNameController.dispose();
+    accountNumberController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColor.scaffoldBackgroundColor,

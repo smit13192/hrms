@@ -13,6 +13,7 @@ abstract class AppImage {
       '$baseOnBoardingImagePath/onboarding_image_3.png';
 
   static const String noInternet = '$baseImagePath/no_internet.png';
+  static const String addLeave = '$baseImagePath/add_leave.png';
 
   // home screen images
   static const String reporting = '$baseImagePath/reporting.png';
