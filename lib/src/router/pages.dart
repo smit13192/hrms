@@ -1,4 +1,5 @@
 import 'package:get/get.dart';
+import 'package:hrms/src/bindings/features/leave_binding.dart';
 import 'package:hrms/src/bindings/features/reporting_binding.dart';
 import 'package:hrms/src/bindings/home_binding.dart';
 import 'package:hrms/src/router/router.dart';
@@ -56,6 +57,7 @@ final List<GetPage> pages = [
     page: () {
       return const LeavesScreen();
     },
+    binding: LeaveBinding(),
   ),
   GetPage(
     name: Routes.project,

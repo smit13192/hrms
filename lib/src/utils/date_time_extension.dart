@@ -5,4 +5,8 @@ extension DateTimeExtension on DateTime {
     final date = DateFormat('MMMM dd, yyyy').format(this);
     return date;
   }
+  String toShortFormatedDate() {
+    final date = DateFormat('dd/MM/yyyy').format(this);
+    return date;
+  }
 }

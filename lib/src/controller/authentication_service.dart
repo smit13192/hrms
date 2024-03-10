@@ -1,7 +1,7 @@
 import 'package:get/get.dart';
-import 'package:hrms/src/model/common_response_model.dart';
-import 'package:hrms/src/model/login_data_model.dart';
-import 'package:hrms/src/model/profile_model.dart';
+import 'package:hrms/src/model/response/common_response_model.dart';
+import 'package:hrms/src/model/response/login_data_response_model.dart';
+import 'package:hrms/src/model/response/profile_response_model.dart';
 import 'package:hrms/src/model/user_model.dart';
 import 'package:hrms/src/repository/authentication_repository.dart';
 import 'package:hrms/src/router/router.dart';
@@ -18,7 +18,8 @@ class AuthenticationService extends GetxService {
     required String email,
     required String password,
   }) async {
-    LoginDataModel result = await authRepository.signIn(email, password);
+    LoginDataResponseModel result =
+        await authRepository.signIn(email, password);
     if (!result.success) {
       AppSnackbar.showErrorSnackbar(title: 'Error', message: result.message);
       return;
@@ -30,7 +31,7 @@ class AuthenticationService extends GetxService {
   }
 
   Future<void> profile() async {
-    final ProfileModel result = await authRepository.profile();
+    final ProfileResponseModel result = await authRepository.profile();
     if (result.success) {
       user.value = result.data!;
     }
@@ -45,7 +46,7 @@ class AuthenticationService extends GetxService {
     required String bankName,
     required String acNumber,
   }) async {
-    final ProfileModel result = await authRepository.editProfile({
+    final ProfileResponseModel result = await authRepository.editProfile({
       'address': address,
       'city': city,
       'state': state,
@@ -62,7 +63,7 @@ class AuthenticationService extends GetxService {
   }
 
   Future<void> profilePicUpdate({required String profilePic}) async {
-    final ProfileModel result =
+    final ProfileResponseModel result =
         await authRepository.profilePicUpdate(profilePic: profilePic);
     if (result.success) {
       user.value = result.data!;

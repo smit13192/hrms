@@ -1,10 +1,10 @@
-class LoginDataModel {
+class LoginDataResponseModel {
   int statusCode;
   bool success;
   String? message;
   String? token;
 
-  LoginDataModel({
+  LoginDataResponseModel({
     required this.statusCode,
     required this.success,
     this.message,
@@ -20,8 +20,8 @@ class LoginDataModel {
     };
   }
 
-  factory LoginDataModel.fromMap(Map<String, dynamic> map) {
-    return LoginDataModel(
+  factory LoginDataResponseModel.fromMap(Map<String, dynamic> map) {
+    return LoginDataResponseModel(
       statusCode: map['statusCode'] as int,
       success: map['success'] as bool,
       message: map['message'] != null ? map['message'] as String : null,
@@ -29,13 +29,13 @@ class LoginDataModel {
     );
   }
 
-  LoginDataModel copyWith({
+  LoginDataResponseModel copyWith({
     int? statusCode,
     bool? success,
     String? message,
     String? token,
   }) {
-    return LoginDataModel(
+    return LoginDataResponseModel(
       statusCode: statusCode ?? this.statusCode,
       success: success ?? this.success,
       message: message ?? this.message,
@@ -49,7 +49,7 @@ class LoginDataModel {
   }
 
   @override
-  bool operator ==(covariant LoginDataModel other) {
+  bool operator ==(covariant LoginDataResponseModel other) {
     if (identical(this, other)) return true;
 
     return other.statusCode == statusCode &&

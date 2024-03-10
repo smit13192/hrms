@@ -1,13 +1,13 @@
 import 'package:dio/dio.dart';
 import 'package:hrms/src/api/api.dart';
-import 'package:hrms/src/model/common_response_model.dart';
-import 'package:hrms/src/model/login_data_model.dart';
-import 'package:hrms/src/model/profile_model.dart';
+import 'package:hrms/src/model/response/common_response_model.dart';
+import 'package:hrms/src/model/response/login_data_response_model.dart';
+import 'package:hrms/src/model/response/profile_response_model.dart';
 
 class AuthenticationRepository {
   ApiClient apiClient = ApiClient();
 
-  Future<LoginDataModel> signIn(
+  Future<LoginDataResponseModel> signIn(
     String email,
     String password,
   ) async {
@@ -15,17 +15,19 @@ class AuthenticationRepository {
       ApiEndpoints.employeeLogin,
       data: {'email': email, 'password': password},
     );
-    return LoginDataModel.fromMap(data);
+    return LoginDataResponseModel.fromMap(data);
   }
 
-  Future<ProfileModel> profile() async {
+  Future<ProfileResponseModel> profile() async {
     dynamic data = await apiClient.get(
       ApiEndpoints.profile,
     );
-    return ProfileModel.fromMap(data);
+    return ProfileResponseModel.fromMap(data);
   }
 
-  Future<ProfileModel> profilePicUpdate({required String profilePic}) async {
+  Future<ProfileResponseModel> profilePicUpdate({
+    required String profilePic,
+  }) async {
     final data = FormData.fromMap({
       'profilePic': await MultipartFile.fromFile(profilePic),
     });
@@ -33,15 +35,15 @@ class AuthenticationRepository {
       ApiEndpoints.editProfile,
       data: data,
     );
-    return ProfileModel.fromMap(result);
+    return ProfileResponseModel.fromMap(result);
   }
-  
-  Future<ProfileModel> editProfile(dynamic data) async {
+
+  Future<ProfileResponseModel> editProfile(dynamic data) async {
     dynamic result = await apiClient.put(
       ApiEndpoints.editProfile,
       data: data,
     );
-    return ProfileModel.fromMap(result);
+    return ProfileResponseModel.fromMap(result);
   }
 
   Future<CommonResponseModel> changePassword({

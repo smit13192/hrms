@@ -1,34 +1,27 @@
-import 'package:hrms/src/model/user_model.dart';
-
-class ProfileModel {
+class StartStopTimeResponseModel {
   int statusCode;
   bool success;
   String? message;
-  User? data;
-  
-  ProfileModel({
+
+  StartStopTimeResponseModel({
     required this.statusCode,
     required this.success,
     this.message,
-    this.data,
   });
-
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
       'statusCode': statusCode,
       'success': success,
       'message': message,
-      'data': data?.toJson(),
     };
   }
 
-  factory ProfileModel.fromMap(Map<String, dynamic> map) {
-    return ProfileModel(
+  factory StartStopTimeResponseModel.fromMap(Map<String, dynamic> map) {
+    return StartStopTimeResponseModel(
       statusCode: map['statusCode'] as int,
       success: map['success'] as bool,
       message: map['message'] != null ? map['message'] as String : null,
-      data: map['data'] != null ? User.fromJson(map['data'] as Map<String,dynamic>) : null,
     );
   }
 }

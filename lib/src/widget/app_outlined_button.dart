@@ -23,7 +23,7 @@ class AppOutlinedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
-      color: Colors.transparent,
+      color: AppColor.transparent,
       borderRadius: borderRadius ?? BorderRadius.circular(8),
       child: InkWell(
         splashColor: buttonColor.withOpacity(0.20),

@@ -8,4 +8,5 @@ class ApiEndpoints {
   static const String startTime = '/userlog/start-time';
   static const String stopTime = '/userlog/stop-time';
   static const String changePassword = '/profile/change-password';
+  static const String getAllLeave = '/leave';
 }

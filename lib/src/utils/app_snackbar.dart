@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:hrms/src/constant/constant.dart';
 
 class AppSnackbar {
   static void showErrorSnackbar({
@@ -8,7 +9,7 @@ class AppSnackbar {
   }) {
     Get.showSnackbar(
       GetSnackBar(
-        backgroundColor: Colors.red.withAlpha(210),
+        backgroundColor: AppColor.red.withAlpha(210),
         margin: const EdgeInsets.all(16),
         barBlur: 20,
         title: title ?? 'Error',
@@ -25,7 +26,7 @@ class AppSnackbar {
   }) {
     Get.showSnackbar(
       GetSnackBar(
-        backgroundColor: Colors.green.withAlpha(210),
+        backgroundColor: AppColor.green.withAlpha(210),
         margin: const EdgeInsets.all(16),
         barBlur: 20,
         title: title ?? 'Success',
@@ -42,7 +43,7 @@ class AppSnackbar {
   }) {
     Get.showSnackbar(
       GetSnackBar(
-        backgroundColor: Colors.blueGrey.withAlpha(210),
+        backgroundColor: AppColor.blueGrey.withAlpha(210),
         margin: const EdgeInsets.all(16),
         barBlur: 20,
         title: title ?? 'Info',

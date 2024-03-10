@@ -1,21 +1,22 @@
 import 'dart:async';
 
 import 'package:get/get.dart';
-import 'package:hrms/src/model/reporting_model.dart';
-import 'package:hrms/src/model/start_stop_time_model.dart';
+import 'package:hrms/src/model/response/reporting_response_model.dart';
+import 'package:hrms/src/model/response/start_stop_time_response_model.dart';
+import 'package:hrms/src/model/response/user_log_response_model.dart';
 import 'package:hrms/src/model/user_log_model.dart';
 import 'package:hrms/src/repository/feature_repository.dart';
 
 class ReportingController extends GetxController {
   FeatureRepository featureRepository = FeatureRepository();
 
-  RxList<UserLog> userLogs = <UserLog>[].obs;
+  RxList<UserLogModel> userLogs = <UserLogModel>[].obs;
   Rx<int> time = 0.obs;
   Rx<bool> isTimeStart = false.obs;
   Timer? timer;
 
   Future<void> getUserLogData({required int month, required int year}) async {
-    UserLogModel result =
+    UserLogResponseModel result =
         await featureRepository.getUserLogData(month: month, year: year);
     if (result.success) {
       userLogs.clear();
@@ -26,7 +27,7 @@ class ReportingController extends GetxController {
   }
 
   Future<void> reportingTime() async {
-    ReportingModel result = await featureRepository.reportingTime();
+    ReportingResponseModel result = await featureRepository.reportingTime();
     if (result.success) {
       if (result.data?.isTotalTimeRunning ?? false) {
         time.value = result.data!.totalReportingTime!;
@@ -42,14 +43,14 @@ class ReportingController extends GetxController {
   }
 
   Future<void> startTime() async {
-    StartStopTimeModel result = await featureRepository.startTime();
+    StartStopTimeResponseModel result = await featureRepository.startTime();
     if (result.success) {
       reportingTime();
     }
   }
 
   Future<void> stopTime() async {
-    StartStopTimeModel result = await featureRepository.stopTime();
+    StartStopTimeResponseModel result = await featureRepository.stopTime();
     if (result.success) {
       timer?.cancel();
       reportingTime();

@@ -209,7 +209,7 @@ class _EditProfileViewState extends State<EditProfileView> {
                   ),
                   GapH(2.h),
                   AppElevatedButton(
-                    text: 'SAVE',
+                    text: 'Save',
                     onPressed: () {
                       authenticationService.editProfile(
                         address: addressController.text.trim(),

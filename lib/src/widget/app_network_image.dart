@@ -22,7 +22,7 @@ class AppNetworkImage extends StatelessWidget {
           baseColor: AppColor.greyShade300,
           highlightColor: AppColor.white,
           child: Container(
-            color: Colors.white,
+            color: AppColor.white,
           ),
         );
       },

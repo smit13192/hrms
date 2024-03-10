@@ -1,12 +1,13 @@
 import 'package:hrms/src/api/api.dart';
-import 'package:hrms/src/model/reporting_model.dart';
-import 'package:hrms/src/model/start_stop_time_model.dart';
-import 'package:hrms/src/model/user_log_model.dart';
+import 'package:hrms/src/model/response/leave_response_model.dart';
+import 'package:hrms/src/model/response/reporting_response_model.dart';
+import 'package:hrms/src/model/response/start_stop_time_response_model.dart';
+import 'package:hrms/src/model/response/user_log_response_model.dart';
 
 class FeatureRepository {
   ApiClient apiClient = ApiClient();
 
-  Future<UserLogModel> getUserLogData({
+  Future<UserLogResponseModel> getUserLogData({
     required int month,
     required int year,
   }) async {
@@ -17,27 +18,34 @@ class FeatureRepository {
         'year': year,
       },
     );
-    return UserLogModel.fromMap(data);
+    return UserLogResponseModel.fromMap(data);
   }
 
-  Future<ReportingModel> reportingTime() async {
+  Future<ReportingResponseModel> reportingTime() async {
     dynamic data = await apiClient.get(
       ApiEndpoints.reportingTime,
     );
-    return ReportingModel.fromMap(data);
+    return ReportingResponseModel.fromMap(data);
   }
-  
-  Future<StartStopTimeModel> startTime() async {
+
+  Future<StartStopTimeResponseModel> startTime() async {
     dynamic data = await apiClient.post(
       ApiEndpoints.startTime,
     );
-    return StartStopTimeModel.fromMap(data);
+    return StartStopTimeResponseModel.fromMap(data);
   }
 
-  Future<StartStopTimeModel> stopTime() async {
+  Future<StartStopTimeResponseModel> stopTime() async {
     dynamic data = await apiClient.post(
       ApiEndpoints.stopTime,
     );
-    return StartStopTimeModel.fromMap(data);
+    return StartStopTimeResponseModel.fromMap(data);
+  }
+
+  Future<LeaveResponseModel> getAllLeave() async {
+    dynamic data = await apiClient.get(
+      ApiEndpoints.getAllLeave,
+    );
+    return LeaveResponseModel.fromJson(data);
   }
 }
