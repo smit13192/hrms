@@ -53,8 +53,8 @@ class FeatureRepository {
     dynamic data = await apiClient.post(
       ApiEndpoints.addLeave,
       data: {
-        'leaveReason': leaveReason,
-        'description': description,
+        'leaveTitle': leaveReason,
+        'leaveReason': description,
         'startDate': startDate,
         'endDate': endDate,
       },

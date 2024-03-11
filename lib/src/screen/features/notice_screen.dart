@@ -87,14 +87,14 @@ class _NoticeViewState extends State<NoticeView> {
                         textAlign: TextAlign.start,
                         maxLines: 1,
                       ),
-                      GapH(1.w),
+                      GapH(1.h),
                       AppText(
                         notice.description!,
                         textAlign: TextAlign.start,
                         fontSize: 10.5.sp,
                         color: AppColor.primaryColor.withOpacity(0.5),
                       ),
-                      GapH(1.w),
+                      GapH(1.h),
                       AppText(
                         notice.date!.toDate().toShortFormatedDate(),
                         fontSize: 12.sp,
