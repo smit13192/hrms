@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
-import 'package:hrms/src/api/api.dart';
+import 'package:hrms/src/api/api_client.dart';
+import 'package:hrms/src/api/api_endpoints.dart';
 import 'package:hrms/src/model/response/common_response_model.dart';
 import 'package:hrms/src/model/response/login_data_response_model.dart';
 import 'package:hrms/src/model/response/profile_response_model.dart';

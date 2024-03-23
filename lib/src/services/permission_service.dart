@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/widget/app_text.dart';
 import 'package:permission_handler/permission_handler.dart';
 import 'package:sizer/sizer.dart';

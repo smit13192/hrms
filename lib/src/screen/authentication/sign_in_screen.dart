@@ -1,9 +1,12 @@
 import 'package:email_validator/email_validator.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
+import 'package:hrms/src/constant/app_image.dart';
 import 'package:hrms/src/controller/authentication_service.dart';
-import 'package:hrms/src/widget/widget.dart';
+import 'package:hrms/src/widget/app_elevated_button.dart';
+import 'package:hrms/src/widget/app_text_formfield.dart';
+import 'package:hrms/src/widget/gap.dart';
 import 'package:sizer/sizer.dart';
 
 class SignInScreen extends StatelessWidget {

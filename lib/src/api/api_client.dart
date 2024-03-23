@@ -1,7 +1,9 @@
 import 'dart:io';
 
 import 'package:dio/dio.dart';
-import 'package:hrms/src/api/api.dart';
+import 'package:hrms/src/api/api_endpoints.dart';
+import 'package:hrms/src/api/api_excetion.dart';
+import 'package:hrms/src/api/api_interceptors.dart';
 import 'package:hrms/src/utils/utils.dart';
 
 class ApiClient {

@@ -1,36 +1,36 @@
-class LeaveModel {
+class HolidayModel {
   String? sId;
-  String? empId;
-  String? leaveTitle;
-  String? leaveReason;
+  String? title;
   String? startDate;
   String? endDate;
-  String? status;
+  String? holidayType;
+  String? description;
+  String? companyId;
   String? createdAt;
   String? updatedAt;
   String? id;
 
-  LeaveModel({
+  HolidayModel({
     this.sId,
-    this.empId,
-    this.leaveTitle,
-    this.leaveReason,
+    this.title,
     this.startDate,
     this.endDate,
-    this.status,
+    this.holidayType,
+    this.description,
+    this.companyId,
     this.createdAt,
     this.updatedAt,
     this.id,
   });
 
-  LeaveModel.fromJson(Map<String, dynamic> json) {
+  HolidayModel.fromJson(Map<String, dynamic> json) {
     sId = json['_id'];
-    empId = json['empId'];
-    leaveTitle = json['leaveTitle'];
-    leaveReason = json['leaveReason'];
+    title = json['title'];
     startDate = json['startDate'];
     endDate = json['endDate'];
-    status = json['status'];
+    holidayType = json['holidayType'];
+    description = json['description'];
+    companyId = json['companyId'];
     createdAt = json['createdAt'];
     updatedAt = json['updatedAt'];
     id = json['id'];
@@ -39,12 +39,12 @@ class LeaveModel {
   Map<String, dynamic> toJson() {
     final Map<String, dynamic> data = <String, dynamic>{};
     data['_id'] = sId;
-    data['empId'] = empId;
-    data['leaveTitle'] = leaveTitle;
-    data['leaveReason'] = leaveReason;
+    data['title'] = title;
     data['startDate'] = startDate;
     data['endDate'] = endDate;
-    data['status'] = status;
+    data['holidayType'] = holidayType;
+    data['description'] = description;
+    data['companyId'] = companyId;
     data['createdAt'] = createdAt;
     data['updatedAt'] = updatedAt;
     data['id'] = id;

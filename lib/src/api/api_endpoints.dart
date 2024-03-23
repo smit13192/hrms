@@ -12,4 +12,6 @@ class ApiEndpoints {
   static const String getAllLeave = '/leave';
   static const String deleteLeave = '/leave/delete';
   static const String getAllNotice = '/notice';
+  static const String getAllHoliday = '/holiday';
+  static const String getAllProject = '/project';
 }

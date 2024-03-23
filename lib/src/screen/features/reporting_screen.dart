@@ -1,10 +1,13 @@
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/controller/features/reporting_controller.dart';
 import 'package:hrms/src/screen/network_screen.dart';
-import 'package:hrms/src/widget/widget.dart';
+import 'package:hrms/src/utils/date_time_extension.dart';
+import 'package:hrms/src/utils/string_extension.dart';
+import 'package:hrms/src/widget/app_text.dart';
+import 'package:hrms/src/widget/gap.dart';
 import 'package:intl/intl.dart';
 import 'package:sizer/sizer.dart';
 
@@ -34,7 +37,6 @@ class _ReportingViewState extends State<ReportingView> {
     super.didChangeDependencies();
     DateTime date = DateTime.now();
     reportingController.getUserLogData(month: date.month, year: date.year);
-    reportingController.reportingTime();
   }
 
   @override
@@ -46,18 +48,11 @@ class _ReportingViewState extends State<ReportingView> {
           backgroundColor: AppColor.transparent,
           elevation: 0,
           centerTitle: true,
-          title: Obx(() {
-            int time = reportingController.time.value;
-            String hours = (time / 3600).floor().toString().padLeft(2, '0');
-            String minute =
-                ((time / 60) % 60).floor().toString().padLeft(2, '0');
-            String second = (time % 60).floor().toString().padLeft(2, '0');
-            return AppText(
-              '$hours:$minute:$second',
-              color: AppColor.primaryColor,
-              fontWeight: FontWeight.bold,
-            );
-          }),
+          title: const AppText(
+            'Daily Reporting',
+            color: AppColor.primaryColor,
+            fontWeight: FontWeight.bold,
+          ),
           leading: GestureDetector(
             onTap: () {
               Get.back();
@@ -140,9 +135,8 @@ class _ReportingViewState extends State<ReportingView> {
                   shrinkWrap: true,
                   itemBuilder: (context, index) {
                     final log = reportingController.userLogs[index];
-                    final date = DateFormat('yyyy-MM-dd').parse(log.date!);
                     final String text =
-                        '${(date.day).toString().padLeft(2, '0')}-${(date.month).toString().padLeft(2, '0')}-${date.year}';
+                        log.date!.toDate().toShortFormatedDate(isApi: true);
                     final String time =
                         '${(log.hours ?? 0).toString().padLeft(2, '0')} Hour ${(log.minutes ?? 0).toString().padLeft(2, '0')} Minute';
                     return Material(
@@ -183,26 +177,6 @@ class _ReportingViewState extends State<ReportingView> {
             ],
           ),
         ),
-        bottomNavigationBar: Obx(() {
-          return Padding(
-            padding: EdgeInsets.symmetric(
-              horizontal: 5.w,
-              vertical: 10,
-            ),
-            child: AppElevatedButton(
-              text: reportingController.isTimeStart.value
-                  ? 'Stop Time'
-                  : 'Start Time',
-              onPressed: () {
-                if (reportingController.isTimeStart.value) {
-                  reportingController.stopTime();
-                } else {
-                  reportingController.startTime();
-                }
-              },
-            ),
-          );
-        }),
       ),
     );
   }

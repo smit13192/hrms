@@ -1,6 +1,8 @@
 import 'package:get/get.dart';
+import 'package:hrms/src/bindings/features/holiday_binding.dart';
 import 'package:hrms/src/bindings/features/leave_binding.dart';
 import 'package:hrms/src/bindings/features/notice_binding.dart';
+import 'package:hrms/src/bindings/features/project_binding.dart';
 import 'package:hrms/src/bindings/features/reporting_binding.dart';
 import 'package:hrms/src/bindings/home_binding.dart';
 import 'package:hrms/src/router/router.dart';
@@ -14,8 +16,6 @@ import 'package:hrms/src/screen/features/notice_screen.dart';
 import 'package:hrms/src/screen/features/profile_screen.dart';
 import 'package:hrms/src/screen/features/project_screen.dart';
 import 'package:hrms/src/screen/features/reporting_screen.dart';
-import 'package:hrms/src/screen/features/salary_screen.dart';
-import 'package:hrms/src/screen/features/team_screen.dart';
 import 'package:hrms/src/screen/home/home_screen.dart';
 import 'package:hrms/src/screen/on_boarding_screen.dart';
 import 'package:hrms/src/screen/splash_screen.dart';
@@ -66,12 +66,7 @@ final List<GetPage> pages = [
     page: () {
       return const ProjectScreen();
     },
-  ),
-  GetPage(
-    name: Routes.team,
-    page: () {
-      return const TeamScreen();
-    },
+    binding: ProjectBinding(),
   ),
   GetPage(
     name: Routes.profile,
@@ -80,13 +75,8 @@ final List<GetPage> pages = [
     },
   ),
   GetPage(
-    name: Routes.salary,
-    page: () {
-      return const SalaryScreen();
-    },
-  ),
-  GetPage(
     name: Routes.holiday,
+    binding: HolidayBinding(),
     page: () {
       return const HolidayScreen();
     },

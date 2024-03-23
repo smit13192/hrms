@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
+import 'package:hrms/src/constant/app_image.dart';
 import 'package:hrms/src/model/on_boading_model.dart';
 import 'package:hrms/src/router/router.dart';
 import 'package:hrms/src/storage/app_storage.dart';
 import 'package:hrms/src/utils/utils.dart';
-import 'package:hrms/src/widget/widget.dart';
+import 'package:hrms/src/widget/app_elevated_button.dart';
+import 'package:hrms/src/widget/app_text.dart';
+import 'package:hrms/src/widget/gap.dart';
 import 'package:sizer/sizer.dart';
 
 class OnBoardingScreen extends StatelessWidget {

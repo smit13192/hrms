@@ -6,8 +6,8 @@ extension DateTimeExtension on DateTime {
     return date;
   }
 
-  String toShortFormatedDate() {
-    final date = DateFormat('dd/MM/yyyy').format(this);
+  String toShortFormatedDate({bool isApi = false}) {
+    final date = DateFormat('dd/MM/yyyy').format(toLocal());
     return date;
   }
 

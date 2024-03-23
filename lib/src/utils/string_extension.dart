@@ -1,8 +1,6 @@
-import 'package:intl/intl.dart';
-
 extension StrintExtension on String {
   DateTime toDate() {
-    final date = DateFormat('yyyy-MM-ddTHH:mm').parse(this);
+    final date = DateTime.parse(this);
     return date;
   }
 

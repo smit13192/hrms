@@ -6,9 +6,7 @@ abstract class Routes {
   static const String reporting = '/reporting_screen';
   static const String leaves = '/leaves_screen';
   static const String project = '/project_screen';
-  static const String team = '/team_screen';
   static const String profile = '/profile_screen';
-  static const String salary = '/salary_screen';
   static const String holiday = '/holiday_screen';
   static const String notice = '/notice_screen';
   static const String userInformation = '/user_information_screen';

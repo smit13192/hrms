@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/utils/utils.dart';
 import 'package:sizer/sizer.dart';
 

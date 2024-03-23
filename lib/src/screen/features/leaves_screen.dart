@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/controller/features/leave_controller.dart';
 import 'package:hrms/src/model/leave_model.dart';
 import 'package:hrms/src/router/router.dart';
@@ -89,7 +89,7 @@ class _LeavesViewState extends State<LeavesView> {
                         children: [
                           Expanded(
                             child: AppText(
-                              leave.leaveReason!,
+                              leave.leaveTitle!,
                               color: AppColor.primaryColor,
                               fontWeight: FontWeight.w600,
                               textAlign: TextAlign.start,
@@ -144,7 +144,7 @@ class _LeavesViewState extends State<LeavesView> {
                       ),
                       if (leave.status != 'pending') const GapH(10),
                       AppText(
-                        leave.description!,
+                        leave.leaveReason!,
                         textAlign: TextAlign.start,
                         fontSize: 10.5.sp,
                         color: AppColor.primaryColor.withOpacity(0.5),
@@ -154,7 +154,7 @@ class _LeavesViewState extends State<LeavesView> {
                         children: [
                           Expanded(
                             child: AppText(
-                              '${leave.startDate!.toDate().toShortFormatedDate()} - ${leave.endDate!.toDate().toShortFormatedDate()}',
+                              '${leave.startDate!.toDate().toShortFormatedDate(isApi: true)} - ${leave.endDate!.toDate().toShortFormatedDate(isApi: true)}',
                               fontSize: 12.sp,
                               fontWeight: FontWeight.w600,
                               color: AppColor.primaryColor,

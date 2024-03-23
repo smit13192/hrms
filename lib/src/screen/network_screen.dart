@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
+import 'package:hrms/src/constant/app_image.dart';
 import 'package:hrms/src/controller/network_service.dart';
 import 'package:sizer/sizer.dart';
 

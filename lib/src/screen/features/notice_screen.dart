@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/controller/features/notice_controller.dart';
 import 'package:hrms/src/model/notice_model.dart';
 import 'package:hrms/src/screen/network_screen.dart';
@@ -96,7 +96,7 @@ class _NoticeViewState extends State<NoticeView> {
                       ),
                       GapH(1.h),
                       AppText(
-                        notice.date!.toDate().toShortFormatedDate(),
+                        notice.date!.toDate().toShortFormatedDate(isApi: true),
                         fontSize: 12.sp,
                         fontWeight: FontWeight.w600,
                         color: AppColor.primaryColor,

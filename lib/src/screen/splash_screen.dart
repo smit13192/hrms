@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_image.dart';
 import 'package:hrms/src/router/router.dart';
 import 'package:hrms/src/storage/app_storage.dart';
 

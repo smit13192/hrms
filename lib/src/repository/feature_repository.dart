@@ -1,9 +1,10 @@
-import 'package:hrms/src/api/api.dart';
+import 'package:hrms/src/api/api_client.dart';
+import 'package:hrms/src/api/api_endpoints.dart';
 import 'package:hrms/src/model/response/common_response_model.dart';
+import 'package:hrms/src/model/response/holiday_response_model.dart';
 import 'package:hrms/src/model/response/leave_response_model.dart';
 import 'package:hrms/src/model/response/notice_response_model.dart';
-import 'package:hrms/src/model/response/reporting_response_model.dart';
-import 'package:hrms/src/model/response/start_stop_time_response_model.dart';
+import 'package:hrms/src/model/response/project_response_model.dart';
 import 'package:hrms/src/model/response/user_log_response_model.dart';
 
 class FeatureRepository {
@@ -21,27 +22,6 @@ class FeatureRepository {
       },
     );
     return UserLogResponseModel.fromMap(data);
-  }
-
-  Future<ReportingResponseModel> reportingTime() async {
-    dynamic data = await apiClient.get(
-      ApiEndpoints.reportingTime,
-    );
-    return ReportingResponseModel.fromMap(data);
-  }
-
-  Future<StartStopTimeResponseModel> startTime() async {
-    dynamic data = await apiClient.post(
-      ApiEndpoints.startTime,
-    );
-    return StartStopTimeResponseModel.fromMap(data);
-  }
-
-  Future<StartStopTimeResponseModel> stopTime() async {
-    dynamic data = await apiClient.post(
-      ApiEndpoints.stopTime,
-    );
-    return StartStopTimeResponseModel.fromMap(data);
   }
 
   Future<CommonResponseModel> addLeave({
@@ -81,5 +61,19 @@ class FeatureRepository {
       ApiEndpoints.getAllNotice,
     );
     return NoticeResponseModel.fromJson(data);
+  }
+
+  Future<HolidayResponseModel> getAllHoliday() async {
+    dynamic data = await apiClient.get(
+      ApiEndpoints.getAllHoliday,
+    );
+    return HolidayResponseModel.fromJson(data);
+  }
+
+  Future<ProjectResponseModel> getAllProjects() async {
+    dynamic data = await apiClient.get(
+      ApiEndpoints.getAllProject,
+    );
+    return ProjectResponseModel.fromJson(data);
   }
 }

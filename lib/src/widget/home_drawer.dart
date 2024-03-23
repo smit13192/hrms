@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:hrms/src/constant/constant.dart';
+import 'package:hrms/src/constant/app_color.dart';
 import 'package:hrms/src/controller/authentication_service.dart';
 import 'package:hrms/src/controller/home_controller.dart';
 import 'package:hrms/src/widget/app_network_image.dart';
-import 'package:hrms/src/widget/widget.dart';
+import 'package:hrms/src/widget/app_text.dart';
+import 'package:hrms/src/widget/gap.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeDrawer extends StatefulWidget {
